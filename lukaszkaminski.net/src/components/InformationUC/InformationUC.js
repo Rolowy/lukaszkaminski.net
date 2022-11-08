@@ -2,6 +2,8 @@ import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import { pulse } from 'react-animations';
 
+import Button from './../assets/Button/Button';
+
 //? --Variables--
 const email = 'kontakt@lukaszkaminski.net';
 const pulse_animation = keyframes`${pulse}`;
@@ -53,6 +55,8 @@ function InformationUc() {
       <Icon>|ŁK</Icon>
       <Title>Website under construction.</Title>
       <Description target="blank" href={`mailto:${email}`}>{email}</Description>
+
+      <Button/>
     </Container>
   )
 }
