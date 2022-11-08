@@ -23,14 +23,9 @@ font-family: 'Russo One', sans-serif;
 margin: 0.5rem;
 font-size: 7rem;
 text-align: uppercase;
-color: #ff0000;
 background: -webkit-linear-gradient(#3c42ed,#2cb1ff);
 -webkit-background-clip: text;
 -webkit-text-fill-color: #ffffff00;
-    
-&:first-letter {
-  color: #ddd;
-}
 
 `
 
