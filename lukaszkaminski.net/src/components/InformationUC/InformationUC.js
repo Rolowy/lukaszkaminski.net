@@ -2,7 +2,7 @@ import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import { pulse } from 'react-animations';
 
-import Button from './../assets/Button/Button';
+import Button from './../assets/Button/Button.lazy';
 
 //? --Variables--
 const email = 'kontakt@lukaszkaminski.net';
