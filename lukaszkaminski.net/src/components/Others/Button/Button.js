@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, {css} from 'styled-components';
-
+import styled from 'styled-components';
 
 const ButtonStyle = styled.button`
 padding: 1em 1.5em;
@@ -38,7 +37,7 @@ font-family: 'Bebas Neue', cursive;
 `
 
 const Button = ({type, disabled, name, title, onClick, className, icon}) => (
-  <FontsButtonStyle icon={icon} type={type} disabled={disabled} name={icon} onClick={onClick} className={className}>
+  <FontsButtonStyle icon={icon} type={type} disabled={disabled} name={name} onClick={onClick} className={className}>
     {title}
   </FontsButtonStyle>
 );
