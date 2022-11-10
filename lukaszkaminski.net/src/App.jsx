@@ -1,14 +1,10 @@
 import React from "react";
-
 import { Routes, Route } from "react-router-dom";
-
 import Navigation from "./components/Navigation/Navigation.lazy";
 
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
-import styled from "styled-components";
-
 
 function App() {
 
