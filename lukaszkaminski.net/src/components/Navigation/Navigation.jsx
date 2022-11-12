@@ -3,6 +3,8 @@ import "./Navigation.css";
 
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { BsFillDiamondFill } from "react-icons/bs";
+
 
 const Nav = styled.div`
   height: 6rem;
@@ -10,6 +12,7 @@ const Nav = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
 
 const Logo = styled.img`
   width: 8rem;
@@ -22,8 +25,10 @@ const List = styled(NavLink)`
   color: rgb(8 3, 31);
 `;
 
-function Navigation() {
+function Navigation(props) {
   const [mobile, setMobile] = useState(true);
+
+  const toggleTheme = () => props.toggleTheme();
 
   const handleIcon = () => {
     setMobile(!mobile);
@@ -38,7 +43,7 @@ function Navigation() {
         <div className="nav-mobile-button" onClick={handleIcon}>
           <ion-icon name={mobile ? "menu-outline" : "close-outline"}></ion-icon>
         </div>
-        <ul className={mobile ? "nav-list" : "nav-list active"}>
+        <ul className={mobile ? "nav-list" : "nav-list-active"}>
           <List to="/" className="nav-list-link">
             Home
           </List>
@@ -48,6 +53,10 @@ function Navigation() {
           <List to="/contact" className="nav-list-link">
             Contact
           </List>
+          <List>
+            <BsFillDiamondFill onClick={ toggleTheme }/>
+          </List>
+         
         </ul>
       </Nav>
     </div>
