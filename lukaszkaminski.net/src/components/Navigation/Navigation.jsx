@@ -3,7 +3,7 @@ import "./Navigation.css";
 
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { BsFillDiamondFill } from "react-icons/bs";
+import { RadioButtonOffOutline, RadioButtonOnOutline } from "react-ionicons";
 
 
 const Nav = styled.div`
@@ -12,7 +12,6 @@ const Nav = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-
 
 const Logo = styled.img`
   width: 8rem;
@@ -35,7 +34,7 @@ function Navigation(props) {
   };
 
   return (
-    <div className="container">
+    <div className="container" data-theme={props.theme}>
       <Nav>
         <Link to="/">
           <Logo src="./../../images/logo.png" alt="logo" />
@@ -54,9 +53,20 @@ function Navigation(props) {
             Contact
           </List>
           <List>
-            <BsFillDiamondFill onClick={ toggleTheme }/>
+            {props.theme === 'light' ? <RadioButtonOffOutline
+              color={"#00000"}
+              title={"Day/Night"}
+              height="20px"
+              width="20px"
+              onClick={toggleTheme}
+              /> : <RadioButtonOnOutline
+              color={"#fff"}
+              title={"Day/Night"}
+              height="20px"
+              width="20px"
+              onClick={toggleTheme}
+              />}
           </List>
-         
         </ul>
       </Nav>
     </div>

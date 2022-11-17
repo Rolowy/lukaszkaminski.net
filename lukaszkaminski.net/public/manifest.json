@@ -1,0 +1,13 @@
+{
+    "short_name": "lukaszkaminski.net",
+    "name": "",
+    "icons": [
+      {
+        "src": "favicon.ico",
+        "sizes": "24x24",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "./index.html",
+    "display": "standalone"
+  }

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Data from "./data/Data";
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { a11yLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
 const ContainerBox = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -23,9 +26,17 @@ box-shadow: inset -4px 1px 9px 4px #0000001c;
 const Content = styled.div`
 display: flex;
 flex-direction: column;
+gap: 1em;
 `;
 
-const Code = styled.textarea`
+const Tags = styled.div`
+padding: 1em;
+background: #5181d5;
+color: white;
+margin-top: 1em;
+`
+
+const Code = styled(SyntaxHighlighter)`
 min-height: 100px;
 background: #fff;
 border: 1px solid #766c6c;
@@ -33,20 +44,24 @@ padding: 0.5em;
 `;
 
 
-const Box = ({ title, code }) => {
+const Box = ({ title, code, tags }) => {
   return (
     <Container>
       <Content>
         <img src="" alt={title} />
         <h1>{title}</h1>
-        <Code disabled={true}>{code}</Code>
+        <Code language="javascript" style={a11yLight}>
+          {code}
+        </Code>
+        {tags && <Tags>{tags}</Tags>}
       </Content>
     </Container>
   );
 };
 
 Box.defaultProps = {
-  code: ''
+  code: '',
+  tags: ''
 }
 
 const InputSearch = styled.input`
@@ -58,9 +73,7 @@ const InputSearch = styled.input`
 
 export default function Home() {
   const inputhandle = (event) => {
-    setTimeout(() => {
       setSearch(event.target.value);
-    }, 3000);
   };
 
   const [search, setSearch] = useState("");
@@ -78,7 +91,7 @@ export default function Home() {
           }
           return val;
         }).map((val, key) => {
-          return <Box title={val.title} code={val.code} />;
+          return <Box key={key} title={val.title} code={val.code} tags={val.tags} />;
         })}
       </ContainerBox>
     </>

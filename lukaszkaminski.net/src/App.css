@@ -1,14 +1,4 @@
-#root {
-    margin: 0 auto;
-    max-width: 1500px;
-}
-
-#light {
-    background-color: rgb(251 251 251 / 72%);
-    height: 100vh;
-}
-
-#dark {
-    background-color: #000;
-    height: 100vh;
+#app {
+  min-height: 100vh;
+  background-color: var(--background);
 }
