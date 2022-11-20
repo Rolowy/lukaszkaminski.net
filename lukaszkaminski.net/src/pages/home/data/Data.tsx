@@ -29,4 +29,10 @@ tags: "key, event"
   },
 ];
 
+type Data = [
+  title: string,
+  code: string,
+  tags: string
+]
+
 export default Data;

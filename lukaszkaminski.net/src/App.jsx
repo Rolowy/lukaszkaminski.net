@@ -9,7 +9,7 @@ import './App.css'
 import Home from "./pages/home/Home";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
-import NoFound from "./pages/NoFound";
+import NotFound from "./pages/NotFound";
 
 
 export const Theme = createContext(null);
@@ -20,7 +20,6 @@ function App() {
 
 
   const toggleTheme = () => {
-    //console.log('Poszło');
     setTheme((val) => (val === "light" ? "dark" : "light"));
   }
 
@@ -32,7 +31,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        <Route path="*" element={<NoFound />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </div>
     </ThemeContext.Provider>

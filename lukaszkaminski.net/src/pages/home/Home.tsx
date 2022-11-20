@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+
 import Data from "./data/Data";
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -43,8 +44,7 @@ border: 1px solid #766c6c;
 padding: 0.5em;
 `;
 
-
-const Box = ({ title, code, tags }) => {
+const Box = ({ title, code, tags } : { title:string, code:string, tags:string }) => {
   return (
     <Container>
       <Content>
@@ -60,6 +60,7 @@ const Box = ({ title, code, tags }) => {
 };
 
 Box.defaultProps = {
+  title: '',
   code: '',
   tags: ''
 }
@@ -72,7 +73,7 @@ const InputSearch = styled.input`
 `;
 
 export default function Home() {
-  const inputhandle = (event) => {
+  const inputhandle = (event : React.ChangeEvent<HTMLInputElement>) => {
       setSearch(event.target.value);
   };
 
