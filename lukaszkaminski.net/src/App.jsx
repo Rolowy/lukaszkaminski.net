@@ -1,41 +1,17 @@
-import React, { createContext, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation.lazy";
-import { ThemeContext } from "styled-components";
-
-
+import React from 'react'
 import './App.css'
+import tw from "tailwind-styled-components"
 
-import Home from "./pages/home/Home";
-import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-
-
-export const Theme = createContext(null);
-
+import Home from './pages/home/index';
+import Navigation from './components/navigation/index.jsx'
 
 function App() {
-  const [theme, setTheme] = useState('light');
-
-
-  const toggleTheme = () => {
-    setTheme((val) => (val === "light" ? "dark" : "light"));
-  }
-
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
-    <div id="app" data-theme={theme}>
-      <Navigation toggleTheme={toggleTheme} theme={theme}/>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/portfolio" element={<Portfolio />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
-    </div>
-    </ThemeContext.Provider>
-  );
+    <>
+      <Navigation />
+      <Home/>
+    </>
+  )
 }
 
-export default App;
+export default App

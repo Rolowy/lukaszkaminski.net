@@ -1,33 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-:root {
-  --background: white;
-  --primary-color: black;
-}
-
-[data-theme="dark"] {
-  --background: black;
-  --primary-color: white;
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style-type: none;
-  text-decoration: none;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-}
-
-html {
-  font-size: 62.5%;
-  font-family: 'Roboto', sans-serif;
-}
-
-body {
-  min-height: 100vh;
-}
-
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
